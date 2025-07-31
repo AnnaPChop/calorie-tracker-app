@@ -25,6 +25,9 @@ def get_exercises_list():
                 }
                 exercises.append(exercise)
         
+        print("[DEBUG] Ejercicios leídos del Excel:")
+        for ex in exercises:
+            print(f"- {ex['name']} (57kg: {ex['57kg']}, 80kg: {ex['80kg']}, duración: {ex['duration']} min)")
         return exercises
         
     except Exception as e:
