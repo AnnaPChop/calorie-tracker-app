@@ -1,9 +1,13 @@
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #f093fb;
-    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --primary-color: #f093fb; /* Fuchsia */
+    --secondary-color: #9f62f5; /* Purple */
+    --accent-color: #f8cdda;
+    --bg-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --text-color: #f0f0f0;
+    --bg-color: #1a1a2e;
+    --card-bg: rgba(22, 22, 46, 0.6); /* Semi-transparent dark blue */
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    --border-color: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -12,11 +16,59 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg-gradient);
+    background-color: var(--bg-color);
+    /* Cat doing exercise, visible and free to use */
+    background-image: url('https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
     min-height: 100vh;
-    color: #333;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20, 20, 30, 0.82); /* overlay oscuro para mejorar contraste */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container, header, .dashboard, .card, .full-width, h2, input, select, button, .calories-result, .modal-content {
+    position: relative;
+    z-index: 1;
+}
+
+input, select, button {
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+select, option {
+    color: #fff;
+    background: #222;
+}
+
+.card {
+    background: rgba(30, 30, 50, 0.92);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+h2, label {
+    color: #fff;
+    text-shadow: 1px 1px 4px #000;
+}
+
+input::placeholder {
+    color: #ccc;
 }
 
 .container {
@@ -34,7 +86,7 @@ header {
 header h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
 }
 
 .dashboard {
@@ -44,35 +96,51 @@ header h1 {
 }
 
 .card {
-    background: white;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
 .full-width {
     grid-column: 1 / -1;
 }
 
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
 input, select, button {
     width: 100%;
     padding: 1rem;
     margin: 0.5rem 0;
-    border: 2px solid #e1e5e9;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     font-size: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    color: var(--text-color);
     transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 input:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.3);
 }
 
 button {
@@ -87,7 +155,7 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .timeframe-buttons {
@@ -99,12 +167,65 @@ button:hover {
 .timeframe-buttons button {
     flex: 1;
     padding: 0.75rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--border-color);
+}
+
+.timeframe-buttons button:hover {
+    background: var(--bg-gradient);
 }
 
 #weight-chart {
     height: 400px;
+}
+
+.calories-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
     border-radius: 12px;
-    overflow: hidden;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#close-modal-btn {
+    width: auto;
+    padding: 1rem 2rem;
 }
 
 @media (max-width: 768px) {
@@ -117,6 +238,6 @@ button:hover {
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
