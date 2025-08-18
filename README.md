@@ -1,8 +1,8 @@
-# CalorieTracker Pro 🎯
+# CalorieTracker Pro 
 
 *Porque MyFitnessPal me tenía HARTA y las calculadoras online son súper básicas*
 
-## El drama que me llevó a crear esto 😤
+## El drama que me llevó a crear esto 
 
 Literal, estaba harta de usar aplicaciones que:
 - Te bombardean con anuncios cada 2 segundos
@@ -14,7 +14,7 @@ Y no me vengan con las típicas calculadoras de "1 libra = 3500 calorías" porqu
 
 Así que dije "ya estuvo, lo hago yo misma" y aquí estamos.
 
-## ¿Qué hace esta cosa? ✨
+## ¿Qué hace esta cosa? 
 
 Básicamente es tu tracker personal de calorías pero con esteroides:
 
