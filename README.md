@@ -18,13 +18,17 @@ Así que dije "ya estuvo, lo hago yo misma" y aquí estamos.
 
 Básicamente es tu tracker personal de calorías pero con esteroides:
 
-🍎 **Tracking real**: Registras lo que comes vs lo que deberías comer
-💪 **Ejercicios que SÍ cuentan**: 23 actividades diferentes con cálculos reales basados en tu peso (Unos ejercicios bien fifis para aquellos que hacen más que yo)
-📊 **Proyecciones que no mienten**: Te dice cuánto vas a bajar en 1, 3, 6 meses o 1 año
-🧠 **Ciencia real**: Usa fórmulas científicas, no de esas cosas que a veces lees de internet
-📱 **Bonita y funcional**: Porque si va a estar en mi portafolio, tiene que verse bien
+ **Tracking real**: Registras lo que comes vs lo que deberías comer
+ 
+ **Ejercicios que SÍ cuentan**: 23 actividades diferentes con cálculos reales basados en tu peso (Unos ejercicios bien fifis para aquellos que hacen más que yo)
 
-## ¿Cómo funciona la magia? 🔮
+**Proyecciones que no mienten**: Te dice cuánto vas a bajar en 1, 3, 6 meses o 1 año
+
+**Ciencia real**: Usa fórmulas científicas, no de esas cosas que a veces lees de internet
+
+**Bonita y funcional**: Porque si va a estar en mi portafolio, tiene que verse bien
+
+## ¿Cómo funciona la magia? 
 
 ### El algoritmo que me costó 3 trasnoches:
 
@@ -69,16 +73,8 @@ python app.py
 - **CSS Grid**: Porque flexbox ya me tiene traumada
 - **NumPy**: Para que las matemáticas no me odien
 
-## Por qué esto es perfecto para mi portafolio 💼
 
-Este proyecto demuestra que sé:
-- Manipular datos reales (Excel incluido)
-- Crear algoritmos que funcionan
-- Hacer interfaces que no dan pena
-- Resolver problemas reales con código
-- Documentar como la gente (no como robot)
-
-## Contribuciones 🤝
+## Contribuciones 
 
 Si encuentras bugs o tienes ideas, manda PR. Solo no me cambies el diseño sin preguntar porque me tomó años llegar a algo que me gusta por favor 😅
 
@@ -94,5 +90,6 @@ Esto es para uso personal/educativo. No soy nutrióloga ni doctora, solo una cie
 ---
 
 *Hecho con mucho café ☕ y frustración 😤 en Morelia, Michoacán*
+
 
 **¿Te gustó?** Dale estrella al repo y sígueme para más proyectos nacidos de la desesperación 🌟
