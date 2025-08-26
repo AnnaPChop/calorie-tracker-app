@@ -85,6 +85,6 @@ def calculate_daily_exercise_calories(exercises, weight):
         total_weekly_calories += calories_per_session * int(exercise['frequency'])
     
     return total_weekly_calories / 7 if total_weekly_calories > 0 else 0
-
+ 
 if __name__ == '__main__':
     app.run(debug=True)
